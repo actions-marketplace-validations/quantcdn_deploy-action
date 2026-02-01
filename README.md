@@ -1,12 +1,12 @@
 # Deploy to QuantCDN Action
 
-This GitHub Action deploys your static site and/or functions to QuantCDN using the Quant CLI v5.
+This GitHub Action deploys your static site and/or functions to QuantCDN using the Quant CLI v6.
 
 ## Usage
 
 ### Deploy Assets
 ```yaml
-- uses: quantcdn/action-deploy@v5
+- uses: quantcdn/action-deploy@v6
   with:
     customer: your-customer-id
     project: your-project-name
@@ -16,7 +16,7 @@ This GitHub Action deploys your static site and/or functions to QuantCDN using t
 
 ### Deploy Functions
 ```yaml
-- uses: quantcdn/action-deploy@v5
+- uses: quantcdn/action-deploy@v6
   with:
     customer: your-customer-id
     project: your-project-name
@@ -56,7 +56,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       
       - name: Build site
         run: |
@@ -64,7 +64,7 @@ jobs:
           npm run build
           
       - name: Deploy to QuantCDN
-        uses: quantcdn/action-deploy@v5
+        uses: quantcdn/action-deploy@v6
         with:
           customer: your-customer-id
           project: your-project-name
@@ -109,10 +109,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       
       - name: Deploy Functions
-        uses: quantcdn/action-deploy@v5
+        uses: quantcdn/action-deploy@v6
         with:
           customer: your-customer-id
           project: your-project-name
@@ -132,7 +132,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       
       - name: Build site
         run: |
@@ -140,7 +140,7 @@ jobs:
           npm run build
           
       - name: Deploy to QuantCDN
-        uses: quantcdn/action-deploy@v5
+        uses: quantcdn/action-deploy@v6
         with:
           customer: your-customer-id
           project: your-project-name
@@ -151,7 +151,7 @@ jobs:
 
 ## Notes
 
-- This action uses Quant CLI v5
+- This action uses Quant CLI v6
 - For search functionality, please use the dedicated search action
 - Make sure your `QUANT_TOKEN` is stored securely in your repository secrets
 
